@@ -1,0 +1,1930 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>محمد ياسر حسين – السيرة الذاتية والمحفظة البرمجية</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Cairo:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Icons (Bootstrap Icons) -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+  />
+
+  <style>
+    :root {
+      --bg-main: #020617;
+      --bg-card: #020818;
+      --bg-soft: #0b1220;
+      --accent: #38bdf8;
+      --accent-strong: #22c55e;
+      --accent-soft: rgba(56, 189, 248, 0.15);
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-soft: rgba(148, 163, 184, 0.4);
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.95);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, rgba(56, 189, 248, 0.14), transparent 55%),
+        radial-gradient(circle at 10% 90%, rgba(96, 165, 250, 0.14), transparent 55%),
+        radial-gradient(circle at 90% 0, rgba(45, 212, 191, 0.16), transparent 60%),
+        var(--bg-main);
+      color: var(--text-main);
+      font-family: "Cairo", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      scroll-behavior: smooth;
+      direction: rtl;
+    }
+
+    body.english {
+      font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      direction: ltr;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .shell {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 16px 40px;
+    }
+
+    /* NAVBAR */
+    .nav-shell {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(
+        180deg,
+        rgba(15, 23, 42, 0.96),
+        rgba(15, 23, 42, 0)
+      );
+      border-bottom: 1px solid rgba(37, 99, 235, 0.5);
+    }
+
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    body.english .nav-inner {
+      flex-direction: row;
+    }
+
+    .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: "Fira Code", monospace;
+      font-size: 0.9rem;
+    }
+    .nav-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 14px rgba(56, 189, 248, 0.9);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .nav-link {
+      font-size: 0.84rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: 0.2s;
+      opacity: 0.9;
+      cursor: pointer;
+    }
+    .nav-link:hover {
+      border-color: rgba(56, 189, 248, 0.5);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--accent);
+      opacity: 1;
+    }
+    .nav-cta {
+      font-size: 0.82rem;
+      border-radius: 999px;
+      padding: 4px 14px;
+      background: linear-gradient(120deg, var(--accent), var(--accent-strong));
+      color: #020617;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 10px 26px rgba(56, 189, 248, 0.5);
+      cursor: pointer;
+    }
+
+    /* language switch */
+    .lang-switch {
+      display: inline-flex;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      overflow: hidden;
+      font-size: 0.75rem;
+    }
+    .lang-btn {
+      padding: 3px 10px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .lang-btn.active {
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--accent);
+    }
+
+    /* SECTIONS / PANELS */
+    .panel {
+      margin-top: 18px;
+      border-radius: 22px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      padding: 20px 18px 22px;
+    }
+    @media (min-width: 992px) {
+      .panel {
+        padding: 26px 26px 26px;
+      }
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #a5b4fc;
+      margin-bottom: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .section-label i {
+      color: var(--accent);
+    }
+
+    .section-line {
+      width: 64px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      margin-bottom: 14px;
+      border-radius: 999px;
+    }
+
+    .group-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #c4b5fd;
+      margin-bottom: 6px;
+    }
+
+    /* HERO TOP */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 18px;
+    }
+    @media (max-width: 768px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-name {
+      font-size: clamp(2.2rem, 3vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: #e5e7eb;
+      margin-bottom: 8px;
+    }
+
+    .hero-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-size: 0.78rem;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-family: "Fira Code", monospace;
+    }
+    .hero-pill i {
+      font-size: 0.9rem;
+    }
+
+    .hero-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 640px;
+    }
+
+    .hero-actions {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .btn-main {
+      border-radius: 999px;
+      padding: 7px 16px;
+      font-size: 0.9rem;
+      border: none;
+      background: linear-gradient(120deg, var(--accent), var(--accent-strong));
+      color: #020617;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 12px 32px rgba(56, 189, 248, 0.55);
+      cursor: pointer;
+    }
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 7px 16px;
+      font-size: 0.9rem;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: #020617;
+      color: var(--text-main);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .hero-side-card {
+      border-radius: 18px;
+      background: radial-gradient(circle at top left, #020617, #020617);
+      border: 1px solid rgba(59, 130, 246, 0.65);
+      padding: 14px 14px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-side-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.12), transparent 60%),
+        radial-gradient(circle at 100% 100%, rgba(34, 197, 94, 0.12), transparent 60%);
+      opacity: 0.75;
+      pointer-events: none;
+    }
+    .hero-side-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .quick-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+    .quick-label {
+      font-size: 0.78rem;
+      color: #9ca3af;
+    }
+    .quick-value {
+      font-size: 0.8rem;
+      text-align: left;
+    }
+    body.english .quick-value {
+      text-align: right;
+    }
+
+    .code-mini {
+      margin-top: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #020617;
+      border: 1px solid rgba(37, 99, 235, 0.8);
+      font-family: "Fira Code", monospace;
+      font-size: 0.78rem;
+      color: #e5e7eb;
+      overflow-x: auto;
+      direction: ltr;
+      text-align: left;
+    }
+    .code-comment {
+      color: #6ee7b7;
+    }
+    .code-key {
+      color: #38bdf8;
+    }
+    .code-string {
+      color: #fbbf24;
+    }
+    .code-value {
+      color: #a5b4fc;
+    }
+
+    /* GENERIC CARDS */
+    .cv-card {
+      border-radius: 16px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border-soft);
+      padding: 10px 12px 10px;
+      margin-bottom: 10px;
+    }
+    .cv-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+    .cv-card-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .cv-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+    .cv-card-meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-align: left;
+    }
+    body.english .cv-card-meta {
+      text-align: right;
+    }
+    .cv-card ul {
+      padding-left: 20px;
+      padding-right: 20px;
+      margin: 4px 0 4px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .cv-card ul li {
+      margin-bottom: 3px;
+    }
+    .cv-mini-list {
+      padding-left: 20px;
+      padding-right: 20px;
+      margin: 2px 0 2px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .cv-mini-list li {
+      margin-bottom: 4px;
+    }
+
+    /* GRID HELPERS */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.7fr);
+      gap: 18px;
+    }
+    @media (max-width: 900px) {
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .grid-2-even {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 18px;
+    }
+    @media (max-width: 768px) {
+      .grid-2-even {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* PROJECTS */
+    .project-card {
+      border-radius: 16px;
+      background: #020617;
+      border: 1px solid rgba(59, 130, 246, 0.7);
+      padding: 10px 12px;
+      margin-bottom: 10px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.18s ease-out, box-shadow 0.18s ease-out,
+        border-color 0.18s;
+    }
+    .project-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.08), transparent 60%),
+        radial-gradient(circle at 100% 100%, rgba(34, 197, 94, 0.08), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 38px rgba(15, 23, 42, 0.95);
+      border-color: rgba(56, 189, 248, 0.95);
+    }
+    .project-card:hover::before {
+      opacity: 1;
+    }
+
+    .project-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1px;
+    }
+    .project-type {
+      font-size: 0.78rem;
+      color: #c4d1f5;
+      margin-bottom: 3px;
+    }
+    .project-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+    }
+    .project-tag {
+      font-size: 0.72rem;
+      color: #4ade80;
+      font-family: "Fira Code", monospace;
+    }
+    .tech-badge {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 1px 7px;
+      font-size: 0.72rem;
+      margin: 0 4px 2px 0;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(96, 165, 250, 0.8);
+      font-family: "Fira Code", monospace;
+      color: #bfdbfe;
+    }
+
+    /* SKILLS / STACK */
+    .skills-chip {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 3px 9px;
+      font-size: 0.78rem;
+      margin: 2px 4px 2px 0;
+      background: #020617;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      color: #e5e7eb;
+      font-family: "Fira Code", monospace;
+      white-space: nowrap;
+    }
+
+    /* LANGUAGE LEVELS (Human languages) */
+    .lang-card {
+      border-radius: 16px;
+      background: #020617;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      padding: 12px 12px;
+    }
+    .lang-row {
+      margin-bottom: 10px;
+    }
+    .lang-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      margin-bottom: 3px;
+    }
+    .lang-name {
+      font-weight: 600;
+    }
+    .lang-stars {
+      font-size: 0.8rem;
+      color: #facc15;
+      font-family: "Fira Code", monospace;
+      letter-spacing: 1px;
+    }
+    .lang-bar {
+      height: 6px;
+      border-radius: 999px;
+      background: #020617;
+      border: 1px solid rgba(30, 64, 175, 0.9);
+      overflow: hidden;
+    }
+    .lang-bar-fill {
+      height: 100%;
+      width: var(--level, 90%);
+      background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: fill-bar 1s ease-out forwards;
+    }
+    @keyframes fill-bar {
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+    /* HOBBIES */
+    .hobby-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 3px 0 0;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+    .hobby-list li {
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .hobby-list i {
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    /* CONTACT */
+    .contact-info-row {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .contact-info-row i {
+      color: var(--accent);
+    }
+
+    .contact-input,
+    .contact-textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: #020617;
+      color: var(--text-main);
+      padding: 7px 9px;
+      font-size: 0.83rem;
+      font-family: inherit;
+      outline: none;
+      transition: 0.18s;
+    }
+    .contact-textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+    .contact-input::placeholder,
+    .contact-textarea::placeholder {
+      color: #6b7280;
+    }
+    .contact-input:focus,
+    .contact-textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 0.14rem rgba(56, 189, 248, 0.25);
+    }
+
+    .footer-text {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    /* AWARDS */
+    .awards-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 4px;
+    }
+    .award-item {
+      border-radius: 14px;
+      padding: 8px 10px;
+      background: #020617;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+    }
+    .award-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 3px;
+    }
+    .award-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .award-pill {
+      font-size: 0.7rem;
+      border-radius: 999px;
+      padding: 2px 8px;
+      background: rgba(56, 189, 248, 0.15);
+      color: #bfdbfe;
+      font-family: "Fira Code", monospace;
+      white-space: nowrap;
+    }
+    .award-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* language visibility */
+    .lang-en { display: none; }
+    .lang-ar { display: inline; }
+
+    body.english .lang-en { display: inline; }
+    body.english .lang-ar { display: none; }
+
+    /* align text in english mode */
+    body.english .hero-text,
+    body.english .cv-card ul,
+    body.english .cv-mini-list,
+    body.english .project-desc,
+    body.english .hobby-list {
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <div class="nav-shell">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <span class="nav-dot"></span>
+        <span class="lang-ar">&lt;MYH&nbsp;/&gt;&nbsp;محفظة</span>
+        <span class="lang-en">&lt;MYH&nbsp;/&gt;&nbsp;portfolio</span>
+      </div>
+      <div class="nav-links">
+        <a href="#top" class="nav-link">
+          <span class="lang-ar">الرئيسية</span>
+          <span class="lang-en">Home</span>
+        </a>
+        <a href="#experience" class="nav-link">
+          <span class="lang-ar">التعليم والخبرة</span>
+          <span class="lang-en">Experience</span>
+        </a>
+        <a href="#projects" class="nav-link">
+          <span class="lang-ar">المشاريع</span>
+          <span class="lang-en">Projects</span>
+        </a>
+        <a href="#stack" class="nav-link">
+          <span class="lang-ar">المهارات</span>
+          <span class="lang-en">Skills</span>
+        </a>
+        <a href="#contact" class="nav-cta">
+          <i class="bi bi-send"></i>
+          <span class="lang-ar">تواصل / اطلب مشروع</span>
+          <span class="lang-en">Contact / Hire Me</span>
+        </a>
+        <div class="lang-switch">
+          <button class="lang-btn active" id="btn-ar">AR</button>
+          <button class="lang-btn" id="btn-en">EN</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="shell">
+    <!-- HERO / TOP -->
+    <section id="top" class="panel">
+      <div class="section-label">
+        <i class="bi bi-person-workspace"></i>
+        <span class="lang-ar">السيرة الذاتية والمحفظة البرمجية</span>
+        <span class="lang-en">Curriculum Vitae &amp; Developer Portfolio</span>
+      </div>
+      <div class="section-line"></div>
+
+      <div class="hero-grid">
+        <!-- Left side -->
+        <div>
+          <h1 class="hero-name">
+            <span class="lang-ar">محمد ياسر حسين</span>
+            <span class="lang-en">Mohammed Yasser Hussain</span>
+          </h1>
+          <div class="hero-subtitle">
+            <span class="lang-ar">
+              مطوّر برمجيات · أخصائي علوم حاسوب وتقنيات المعلومات · طالب ماجستير علوم حاسبات
+            </span>
+            <span class="lang-en">
+              Software Developer · Cybersecurity &amp; IT Specialist · M.Sc. Computer Science Student
+            </span>
+          </div>
+
+          <div class="hero-pill-row">
+            <div class="hero-pill">
+              <i class="bi bi-code-slash"></i>
+              <span class="lang-ar">Full-Stack (PHP · ASP.NET · C# · Python)</span>
+              <span class="lang-en">Full-Stack (PHP · ASP.NET · C# · Python)</span>
+            </div>
+            <div class="hero-pill">
+              <i class="bi bi-shield-lock"></i>
+              <span class="lang-ar">أمن سيبراني وتشفير</span>
+              <span class="lang-en">Cybersecurity &amp; Cryptography</span>
+            </div>
+            <div class="hero-pill">
+              <i class="bi bi-hdd-network"></i>
+              <span class="lang-ar">شبكات، خوادم، وأنظمة إنترنت الأشياء</span>
+              <span class="lang-en">IT Infrastructure &amp; IoT Systems</span>
+            </div>
+          </div>
+
+          <p class="hero-text">
+            <span class="lang-ar">
+              أنا مطوّر برمجيات من مدينة الفلوجة – العراق، أمتلك خبرة عملية في بناء أنظمة حقيقية
+              للجامعات، المراكز الطبية، الشركات التجارية، ومجال التكييف (HVAC). عملي يدمج بين
+              تطوير الويب (PHP, ASP.NET, C#)، ومفاهيم الأمن السيبراني والتشفير، وإدارة الخوادم
+              والشبكات، وأنظمة إنترنت الأشياء باستخدام Arduino و ESP32. أدرس حاليًا ماجستير
+              علوم حاسبات في جامعة الأنبار، وفي مرحلة كتابة الرسالة.
+            </span>
+            <span class="lang-en">
+              I am a software developer from Al-Fallujah, Iraq, with experience in building
+              real systems for universities, medical centers, businesses, and HVAC companies.
+              My work combines web development (PHP, ASP.NET, C#), cybersecurity concepts,
+              IT/server administration, and IoT solutions using Arduino and ESP32. I am also
+              an M.Sc. student in Computer Science at the University of Anbar, currently
+              working on my thesis.
+            </span>
+          </p>
+
+          <div class="hero-actions">
+            <a href="#" class="btn-main">
+              <i class="bi bi-file-earmark-text"></i>
+              <span class="lang-ar">تحميل السيرة الذاتية (PDF)</span>
+              <span class="lang-en">Download CV (PDF)</span>
+            </a>
+            <a href="#contact" class="btn-ghost">
+              <i class="bi bi-chat-left-dots"></i>
+              <span class="lang-ar">أرسل طلب مشروع أو رسالة</span>
+              <span class="lang-en">Request a Project / Send a Message</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right side -->
+        <div>
+          <div class="hero-side-card">
+            <div class="hero-side-inner">
+              <div class="quick-row">
+                <div class="quick-label">
+                  <span class="lang-ar">الموقع</span>
+                  <span class="lang-en">Location</span>
+                </div>
+                <div class="quick-value">
+                  <span class="lang-ar">الفلوجة، العراق</span>
+                  <span class="lang-en">Al-Fallujah, Iraq</span>
+                </div>
+              </div>
+              <div class="quick-row">
+                <div class="quick-label">
+                  <span class="lang-ar">الوضع الحالي</span>
+                  <span class="lang-en">Current Status</span>
+                </div>
+                <div class="quick-value">
+                  <span class="lang-ar">طالب ماجستير – جامعة الأنبار</span>
+                  <span class="lang-en">M.Sc. Student – University of Anbar</span>
+                </div>
+              </div>
+              <div class="quick-row">
+                <div class="quick-label">
+                  <span class="lang-ar">مجالات العمل</span>
+                  <span class="lang-en">Fields</span>
+                </div>
+                <div class="quick-value">
+                  <span class="lang-ar">برمجة · أمن سيبراني · IT · IoT · ذكاء اصطناعي</span>
+                  <span class="lang-en">Software · Cybersecurity · IT · IoT · AI</span>
+                </div>
+              </div>
+              <div class="quick-row">
+                <div class="quick-label">
+                  <span class="lang-ar">الخبرة</span>
+                  <span class="lang-en">Experience</span>
+                </div>
+                <div class="quick-value">
+                  <span class="lang-ar">مصنع / مخازن / IT / عمل حر</span>
+                  <span class="lang-en">Factory / Warehouses / IT / Freelance</span>
+                </div>
+              </div>
+
+              <div class="code-mini" style="margin-top:10px;">
+                <span class="code-comment">// quick tech snapshot</span><br />
+                const <span class="code-key">developer</span> =
+                <span class="code-value">{</span><br />
+                &nbsp;&nbsp;name:
+                <span class="code-string">"Mohammed Yasser Hussain"</span>,<br />
+                &nbsp;&nbsp;roles:
+                <span class="code-value">["Full-Stack", "Cybersecurity", "IT/Servers", "IoT"]</span>,<br />
+                &nbsp;&nbsp;stack:
+                <span class="code-value">["PHP", "ASP.NET", "C#", "Python", "Arduino", "ESP32"]</span><br />
+                <span class="code-value">}</span>;
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & EXPERIENCE -->
+    <section id="experience" class="panel">
+      <div class="section-label">
+        <i class="bi bi-mortarboard"></i>
+        <span class="lang-ar">التعليم والخبرة العملية</span>
+        <span class="lang-en">Education &amp; Professional Experience</span>
+      </div>
+      <div class="section-line"></div>
+
+      <div class="grid-2">
+        <!-- Education -->
+        <div>
+          <div class="group-title">
+            <span class="lang-ar">التعليم</span>
+            <span class="lang-en">Education</span>
+          </div>
+
+          <div class="cv-card">
+            <div class="cv-card-header">
+              <div>
+                <div class="cv-card-title">
+                  <span class="cv-icon"><i class="bi bi-mortarboard"></i></span>
+                  <span class="lang-ar">ماجستير علوم حاسبات</span>
+                  <span class="lang-en">M.Sc. in Computer Science</span>
+                </div>
+                <div class="cv-card-meta">
+                  <span class="lang-ar">جامعة الأنبار – كلية علوم الحاسوب وتكنلوجيا المعلومات</span>
+                  <span class="lang-en">University of Anbar – College of Computer Science &amp; IT</span>
+                </div>
+              </div>
+              <div class="cv-card-meta">
+                <span class="lang-ar">2024 – الآن</span>
+                <span class="lang-en">2024 – Present</span>
+              </div>
+            </div>
+            <ul>
+              <li class="lang-ar">طالب في برنامج ماجستير علوم الحاسبات.</li>
+              <li class="lang-ar">حاليًا في مرحلة كتابة الرسالة.</li>
+              <li class="lang-ar">
+                عنوان الرسالة: <strong>[أضف عنوان رسالتك الرسمي هنا]</strong>
+              </li>
+
+              <li class="lang-en">Enrolled in the M.Sc. program in Computer Science.</li>
+              <li class="lang-en">Currently in thesis writing stage.</li>
+              <li class="lang-en">
+                Thesis Title:
+                <strong>[Add your official thesis title here]</strong>
+              </li>
+            </ul>
+          </div>
+
+          <div class="cv-card">
+            <div class="cv-card-header">
+              <div>
+                <div class="cv-card-title">
+                  <span class="cv-icon"><i class="bi bi-mortarboard"></i></span>
+                  <span class="lang-ar">بكالوريوس علوم حاسبات</span>
+                  <span class="lang-en">B.Sc. in Computer Science</span>
+                </div>
+                <div class="cv-card-meta">
+                  <span class="lang-ar">جامعة الأنبار – كلية علوم الحاسوب وتكنلوجيا المعلومات</span>
+                  <span class="lang-en">University of Anbar – College of Computer Science &amp; IT</span>
+                </div>
+              </div>
+              <div class="cv-card-meta">
+                <span class="lang-ar">[أضف سنة التخرج]</span>
+                <span class="lang-en">[Add graduation year]</span>
+              </div>
+            </div>
+            <ul>
+              <li class="lang-ar">من الأوائل على كلية علوم الحاسوب وتكنلوجيا المعلومات.</li>
+              <li class="lang-ar">التخصص: علوم حاسبات.</li>
+
+              <li class="lang-en">Graduated as one of the top-ranked students in the college.</li>
+              <li class="lang-en">Specialization: Computer Science.</li>
+            </ul>
+          </div>
+
+          <!-- AWARDS -->
+          <div class="group-title" style="margin-top:10px;">
+            <span class="lang-ar">الجوائز والإنجازات</span>
+            <span class="lang-en">Awards &amp; Achievements</span>
+          </div>
+          <div class="cv-card">
+            <div class="awards-list">
+              <div class="award-item">
+                <div class="award-header-row">
+                  <div class="award-title">
+                    <span class="lang-ar">من الأوائل على كلية علوم الحاسوب وتكنلوجيا المعلومات</span>
+                    <span class="lang-en">Top-ranked Graduate – College of Computer Science &amp; IT</span>
+                  </div>
+                  <div class="award-pill">Academic</div>
+                </div>
+                <div class="award-sub lang-ar">
+                  ترتيب متقدم ضمن أوائل كلية علوم الحاسوب وتكنلوجيا المعلومات – جامعة الأنبار.
+                </div>
+                <div class="award-sub lang-en">
+                  Ranked among the top students of the College of Computer Science &amp; IT, University of Anbar.
+                </div>
+              </div>
+
+              <div class="award-item">
+                <div class="award-header-row">
+                  <div class="award-title">
+                    <span class="lang-ar">مسابقة هواوي لتقنية المعلومات والاتصالات – المستويات الوطنية والإقليمية</span>
+                    <span class="lang-en">Huawei ICT Competition – National &amp; Regional Rounds</span>
+                  </div>
+                  <div class="award-pill">Huawei ICT</div>
+                </div>
+                <div class="award-sub lang-ar">
+                  تحقيق مراكز متقدمة في مسابقة هواوي لتقنية المعلومات والاتصالات على المستوى الوطني والإقليمي.
+                </div>
+                <div class="award-sub lang-en">
+                  Achieved high placements in Huawei ICT Competition at the national and regional levels.
+                </div>
+              </div>
+
+              <div class="award-item">
+                <div class="award-header-row">
+                  <div class="award-title">
+                    <span class="lang-ar">المركز الثاني عالميًا – نهائيات مسابقة هواوي (فريق)</span>
+                    <span class="lang-en">Huawei ICT Competition – Global Final (2nd Place – Team)</span>
+                  </div>
+                  <div class="award-pill">Huawei ICT · Global</div>
+                </div>
+                <div class="award-sub lang-ar">
+                  الحصول على المركز الثاني عالميًا ضمن فريق في نهائيات مسابقة هواوي لتقنية المعلومات والاتصالات.
+                </div>
+                <div class="award-sub lang-en">
+                  Second place as part of a team at the Huawei ICT Competition Global Final.
+                </div>
+              </div>
+
+              <div class="award-item">
+                <div class="award-header-row">
+                  <div class="award-title">
+                    <span class="lang-ar">برنامج هواوي "Seeds for the Future"</span>
+                    <span class="lang-en">Huawei "Seeds for the Future" Program</span>
+                  </div>
+                  <div class="award-pill">Program</div>
+                </div>
+                <div class="award-sub lang-ar">
+                  مختار للمشاركة في برنامج هواوي الدولي للتدريب "Seeds for the Future".
+                </div>
+                <div class="award-sub lang-en">
+                  Selected to participate in Huawei's international "Seeds for the Future" training program.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience -->
+        <div>
+          <div class="group-title">
+            <span class="lang-ar">الخبرة العملية</span>
+            <span class="lang-en">Professional Experience</span>
+          </div>
+
+          <div class="cv-card">
+            <div class="cv-card-header">
+              <div>
+                <div class="cv-card-title">
+                  <span class="cv-icon"><i class="bi bi-building-gear"></i></span>
+                  <span class="lang-ar">مدير مصنع دكتات وتبريد مركزي – ProDuct</span>
+                  <span class="lang-en">Factory Manager – Duct &amp; Central Cooling, ProDuct</span>
+                </div>
+                <div class="cv-card-meta">
+                  <span class="lang-ar">العراق</span>
+                  <span class="lang-en">Iraq</span>
+                </div>
+              </div>
+              <div class="cv-card-meta">
+                <span class="lang-ar">تموز 2025 – تشرين الثاني 2025</span>
+                <span class="lang-en">Jul 2025 – Nov 2025</span>
+              </div>
+            </div>
+            <ul>
+              <li class="lang-ar">إدارة إنتاج مجاري الهواء (Duct) وأنظمة التبريد المركزي.</li>
+              <li class="lang-ar">الإشراف على فرق العمل وتنظيم سير العمل اليومي في المصنع.</li>
+              <li class="lang-ar">متابعة توفر المواد (لفائف الحديد، العوازل، الإكسسوارات) وضمان جودتها.</li>
+              <li class="lang-ar">التنسيق مع المهندسين لتسعير وتنفيذ مشاريع التكييف.</li>
+
+              <li class="lang-en">Managed production of ducting and central cooling systems.</li>
+              <li class="lang-en">Supervised technicians and organized daily workflow.</li>
+              <li class="lang-en">Followed up material availability (coils, insulation, accessories).</li>
+              <li class="lang-en">Worked closely with engineers on pricing and execution of HVAC projects.</li>
+            </ul>
+          </div>
+
+          <div class="cv-card">
+            <div class="cv-card-header">
+              <div>
+                <div class="cv-card-title">
+                  <span class="cv-icon"><i class="bi bi-hdd-network"></i></span>
+                  <span class="lang-ar">مسؤول خوادم وتقنيات معلومات – شركة مبيعات الرمال</span>
+                  <span class="lang-en">IT &amp; Servers Officer – Al-Rimal Sales Company</span>
+                </div>
+                <div class="cv-card-meta">
+                  <span class="lang-ar">العراق</span>
+                  <span class="lang-en">Iraq</span>
+                </div>
+              </div>
+              <div class="cv-card-meta">
+                <span class="lang-ar">2022 – لمدة 6 أشهر</span>
+                <span class="lang-en">2022 · 6 months</span>
+              </div>
+            </div>
+            <ul>
+              <li class="lang-ar">إدارة خوادم الأنظمة الداخلية (فواتير، مبيعات، مخازن).</li>
+              <li class="lang-ar">إدارة الشبكة الداخلية (راوترات، سويتشات، وربط الفروع إن وُجدت).</li>
+              <li class="lang-ar">أخذ نسخ احتياطية دورية للبيانات ومتابعة جانب الحماية الأساسي.</li>
+              <li class="lang-ar">تقديم الدعم الفني اليومي للموظفين وحل المشاكل التقنية.</li>
+
+              <li class="lang-en">Managed on-premise servers for sales, inventory, and invoicing systems.</li>
+              <li class="lang-en">Administered LAN, routers, switches, and internal connectivity.</li>
+              <li class="lang-en">Performed regular backups and supported basic security measures.</li>
+              <li class="lang-en">Provided day-to-day IT support and troubleshooting for staff.</li>
+            </ul>
+          </div>
+
+          <div class="cv-card">
+            <div class="cv-card-header">
+              <div>
+                <div class="cv-card-title">
+                  <span class="cv-icon"><i class="bi bi-box-seam"></i></span>
+                  <span class="lang-ar">مدير مخازن لسبعة مشاريع – شركة الرمال وروعة جنة بغداد</span>
+                  <span class="lang-en">Warehouse Manager – 7 Projects, Al-Rimal &amp; Rawat Jannat Baghdad</span>
+                </div>
+                <div class="cv-card-meta">
+                  <span class="lang-ar">العراق</span>
+                  <span class="lang-en">Iraq</span>
+                </div>
+              </div>
+              <div class="cv-card-meta">
+                <span class="lang-ar">2020 – 2022</span>
+                <span class="lang-en">2020 – 2022</span>
+              </div>
+            </div>
+            <ul>
+              <li class="lang-ar">إدارة مخزون مواد التكييف والدكتات والأجهزة لسبعة مشاريع بالتوازي.</li>
+              <li class="lang-ar">تسجيل حركات الإدخال والإخراج وإصدار سندات التسليم للمواقع.</li>
+              <li class="lang-ar">التنسيق مع المهندسين لتلبية احتياجات كل مشروع في الوقت المناسب.</li>
+              <li class="lang-ar">إجراء جرد دوري ومطابقة المخزون الفعلي مع السجلات.</li>
+
+              <li class="lang-en">Managed HVAC materials and equipment for seven simultaneous projects.</li>
+              <li class="lang-en">Tracked stock in/out and prepared delivery notes to sites.</li>
+              <li class="lang-en">Coordinated with engineers to cover project needs on time.</li>
+              <li class="lang-en">Performed periodic inventory reconciliation.</li>
+            </ul>
+          </div>
+
+          <div class="cv-card">
+            <div class="cv-card-header">
+              <div>
+                <div class="cv-card-title">
+                  <span class="cv-icon"><i class="bi bi-pc-display"></i></span>
+                  <span class="lang-ar">مسؤول قسم صيانة الحاسبات – مكتب الأيهم للإلكترونيات</span>
+                  <span class="lang-en">Computer Maintenance Supervisor – Al-Ayham Electronics Office</span>
+                </div>
+                <div class="cv-card-meta">
+                  <span class="lang-ar">الفلوجة، العراق</span>
+                  <span class="lang-en">Al-Fallujah, Iraq</span>
+                </div>
+              </div>
+              <div class="cv-card-meta">
+                <span class="lang-ar">2021 – 2023</span>
+                <span class="lang-en">2021 – 2023</span>
+              </div>
+            </div>
+            <ul>
+              <li class="lang-ar">صيانة الهاردوير والسوفتوير لأجهزة الحاسوب واللابتوب.</li>
+              <li class="lang-ar">تنصيب أنظمة التشغيل والبرامج وبرامج الحماية.</li>
+              <li class="lang-ar">إعداد شبكات محلية بسيطة وربط أجهزة الـ Wi-Fi.</li>
+              <li class="lang-ar">التعامل المباشر مع الزبائن وشرح الأعطال والحلول المقترحة.</li>
+
+              <li class="lang-en">Handled hardware and software maintenance for PCs and laptops.</li>
+              <li class="lang-en">Installed operating systems, software, and security tools.</li>
+              <li class="lang-en">Configured small networks and Wi-Fi connections.</li>
+              <li class="lang-en">Explained problems and solutions clearly to customers.</li>
+            </ul>
+          </div>
+
+          <div class="cv-card">
+            <div class="cv-card-header">
+              <div>
+                <div class="cv-card-title">
+                  <span class="cv-icon"><i class="bi bi-brush"></i></span>
+                  <span class="lang-ar">مصمّم وصيانة حاسبات – مكتبة المتميّز</span>
+                  <span class="lang-en">Computer Designer &amp; Technician – Al-Mumtaz Library</span>
+                </div>
+                <div class="cv-card-meta">
+                  <span class="lang-ar">الفلوجة، العراق</span>
+                  <span class="lang-en">Al-Fallujah, Iraq</span>
+                </div>
+              </div>
+              <div class="cv-card-meta">
+                <span class="lang-ar">لمدة 5 أشهر</span>
+                <span class="lang-en">5 months</span>
+              </div>
+            </div>
+            <ul>
+              <li class="lang-ar">تصميم بوسترات وبنرات وهويات وكارتات عمل.</li>
+              <li class="lang-ar">تجهيز الحاسبات للطباعة والأعمال المكتبية اليومية.</li>
+              <li class="lang-ar">تنفيذ صيانة بسيطة للحاسبات داخل المكتبة.</li>
+
+              <li class="lang-en">Designed posters, banners, IDs, and business cards.</li>
+              <li class="lang-en">Prepared PCs for printing and day-to-day office tasks.</li>
+              <li class="lang-en">Provided basic PC maintenance and configuration.</li>
+            </ul>
+          </div>
+
+          <div class="cv-card">
+            <div class="cv-card-header">
+              <div>
+                <div class="cv-card-title">
+                  <span class="cv-icon"><i class="bi bi-phone"></i></span>
+                  <span class="lang-ar">مروّج هواتف – Huawei</span>
+                  <span class="lang-en">Promoter – Huawei Smartphones</span>
+                </div>
+                <div class="cv-card-meta">
+                  <span class="lang-ar">الفلوجة، العراق</span>
+                  <span class="lang-en">Al-Fallujah, Iraq</span>
+                </div>
+              </div>
+              <div class="cv-card-meta">
+                <span class="lang-ar">3 أشهر – 2024</span>
+                <span class="lang-en">3 months · 2024</span>
+              </div>
+            </div>
+            <ul>
+              <li class="lang-ar">الترويج لهواتف هواوي في نقاط البيع والمعارض.</li>
+              <li class="lang-ar">شرح ميزات الأجهزة ومساعدة الزبائن في اختيار الجهاز المناسب.</li>
+              <li class="lang-ar">متابعة المبيعات اليومية ورفع تقارير للمشرف.</li>
+
+              <li class="lang-en">Promoted Huawei smartphones at points of sale and exhibitions.</li>
+              <li class="lang-en">Explained device features and helped customers choose devices.</li>
+              <li class="lang-en">Recorded daily sales and reported to supervisors.</li>
+            </ul>
+          </div>
+
+          <div class="cv-card">
+            <div class="cv-card-header">
+              <div>
+                <div class="cv-card-title">
+                  <span class="cv-icon"><i class="bi bi-code-slash"></i></span>
+                  <span class="lang-ar">مطور برمجيات حر – مستقل &amp; Upwork</span>
+                  <span class="lang-en">Freelance Software Developer – Upwork &amp; Mostaql</span>
+                </div>
+                <div class="cv-card-meta">
+                  <span class="lang-ar">عن بُعد</span>
+                  <span class="lang-en">Remote</span>
+                </div>
+              </div>
+              <div class="cv-card-meta">
+                <span class="lang-ar">2021 – حتى الآن</span>
+                <span class="lang-en">2021 – Present</span>
+              </div>
+            </div>
+            <ul>
+              <li class="lang-ar">تطوير أنظمة ويب مخصّصة للجامعات والعيادات والمحلات والمخازن والمكتبات.</li>
+              <li class="lang-ar">بناء أنظمة عروض أسعار وإدارة مشاريع لشركة ProDuct / ProSteel في مجال الدكت وحديد التسليح.</li>
+              <li class="lang-ar">إنشاء مواقع تعريفية للشركات ومحافظ شخصية بواجهات متجاوبة.</li>
+              <li class="lang-ar">إدارة وصيانة قواعد بيانات (MySQL, SQLite, SQL Server) ودعم الأنظمة بعد التسليم.</li>
+
+              <li class="lang-en">Developed custom web systems for universities, clinics, shops, warehouses, and libraries.</li>
+              <li class="lang-en">Built quotation and management tools for ProDuct / ProSteel (HVAC &amp; steel works).</li>
+              <li class="lang-en">Created responsive company websites and personal portfolios.</li>
+              <li class="lang-en">Provided ongoing maintenance and database support (MySQL / SQLite / SQL Server).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="panel">
+      <div class="section-label">
+        <i class="bi bi-grid-3x3-gap-fill"></i>
+        <span class="lang-ar">نماذج من المشاريع</span>
+        <span class="lang-en">Selected Projects</span>
+      </div>
+      <div class="section-line"></div>
+
+      <div class="grid-2-even">
+        <!-- Web / Business / University Systems -->
+        <div>
+          <div class="group-title">
+            <span class="lang-ar">أنظمة ويب، أعمال، وجامعات</span>
+            <span class="lang-en">Web &amp; Business / University Systems</span>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title">
+              <span class="lang-ar">نظام إدارة جامعة متكامل</span>
+              <span class="lang-en">University Management System</span>
+            </div>
+            <div class="project-type">
+              <span class="lang-ar">نظام معلومات جامعي · PHP, MySQL, HTML/CSS/JS</span>
+              <span class="lang-en">University Information System · PHP, MySQL, HTML/CSS/JS</span>
+            </div>
+            <p class="project-desc">
+              <span class="lang-ar">
+                إدارة الطلبة، التدريسيين، المواد، الدرجات، الطلبات والوثائق الرسمية مع لوحات تحكم حسب الصلاحيات.
+              </span>
+              <span class="lang-en">
+                Manages students, staff, courses, grades, requests, and official documents with role-based dashboards.
+              </span>
+            </p>
+            <span class="project-tag">// University · Full-Stack</span><br />
+            <span class="tech-badge">PHP</span><span class="tech-badge">MySQL</span>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title">
+              <span class="lang-ar">نظام متابعة مكتب رئيس الجامعة وإدارة الطلبات</span>
+              <span class="lang-en">University President’s Office – E-Office &amp; Tracking</span>
+            </div>
+            <div class="project-type">
+              <span class="lang-ar">مسار عمل إلكتروني · PHP, MySQL &amp; ASP.NET MVC</span>
+              <span class="lang-en">E-Office Workflow · PHP, MySQL &amp; ASP.NET MVC</span>
+            </div>
+            <p class="project-desc">
+              <span class="lang-ar">
+                نظام لتسجيل الطلبات والكتب الرسمية ومتابعتها وإرسال الإشعارات، مع صلاحيات متعددة (طلبة، موظفين، رئيس جامعة).
+              </span>
+              <span class="lang-en">
+                Request and document workflow for the president’s office, with tracking, notifications, and multi-role access.
+              </span>
+            </p>
+            <span class="project-tag">// Workflow · Notifications</span><br />
+            <span class="tech-badge">PHP</span><span class="tech-badge">ASP.NET MVC</span>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title">
+              <span class="lang-ar">نظام تسجيل الدراسة الأولية</span>
+              <span class="lang-en">Registration System for Undergraduate Studies</span>
+            </div>
+            <div class="project-type">
+              <span class="lang-ar">تسجيل الطلبة · ASP.NET, SQL</span>
+              <span class="lang-en">Student Registration · ASP.NET, SQL</span>
+            </div>
+            <p class="project-desc">
+              <span class="lang-ar">
+                إدارة تسجيل الطلبة، رغبات القبول، حالات القبول، مع تقارير للكلية والجامعة.
+              </span>
+              <span class="lang-en">
+                Handles student registration, choices, and status, with reports for university administration.
+              </span>
+            </p>
+            <span class="project-tag">// University · ASP.NET</span><br />
+            <span class="tech-badge">ASP.NET</span><span class="tech-badge">SQL</span>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title">
+              <span class="lang-ar">أنظمة الترقية العلمية الأكاديمية (2017 وما بعدها)</span>
+              <span class="lang-en">Academic Scientific Promotion Systems (2017 &amp; Extended)</span>
+            </div>
+            <div class="project-type">
+              <span class="lang-ar">إدارة الترقية العلمية · ASP.NET, SQL</span>
+              <span class="lang-en">Promotion Management · ASP.NET, SQL</span>
+            </div>
+            <p class="project-desc">
+              <span class="lang-ar">
+                أنظمة لإدارة معاملات الترقية العلمية للأساتذة وتتبع مراحل المعاملة واللجان العلمية.
+              </span>
+              <span class="lang-en">
+                Systems to manage academic promotion requests and track scientific promotion procedures.
+              </span>
+            </p>
+            <span class="project-tag">// Academic · Promotion</span><br />
+            <span class="tech-badge">ASP.NET</span>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title">
+              <span class="lang-ar">نظام إدارة محل ألمنيوم وكاشير ذكي</span>
+              <span class="lang-en">Aluminum Store Management &amp; Smart Cashier</span>
+            </div>
+            <div class="project-type">
+              <span class="lang-ar">مبيعات ومخازن وديون · PHP, MySQL</span>
+              <span class="lang-en">POS &amp; Inventory · PHP, MySQL</span>
+            </div>
+            <p class="project-desc">
+              <span class="lang-ar">
+                نظام عملي لإدارة المبيعات والمشتريات والديون وأبعاد القطع، مع تقارير للأرباح والمخزون.
+              </span>
+              <span class="lang-en">
+                Real system for sales, purchases, debts, and product dimensions, with reports for profits and stock.
+              </span>
+            </p>
+            <span class="project-tag">// Business · POS</span><br />
+            <span class="tech-badge">PHP</span><span class="tech-badge">MySQL</span>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title">
+              <span class="lang-ar">نظام الغيابات والطلبات للطلبة</span>
+              <span class="lang-en">Student Attendance &amp; Request Modules</span>
+            </div>
+            <div class="project-type">
+              <span class="lang-ar">غيابات ووثائق · PHP, SQL</span>
+              <span class="lang-en">Attendance &amp; Documents · PHP, SQL</span>
+            </div>
+            <p class="project-desc">
+              <span class="lang-ar">
+                تسجيل غيابات الطلبة وإدارة طلباتهم للوثائق (براءة ذمة، تأييدات، وثائق تخرج) مع تتبع حالة الطلب.
+              </span>
+              <span class="lang-en">
+                Records student absences and manages official requests (clearance, confirmations, graduation documents).
+              </span>
+            </p>
+            <span class="project-tag">// University · Workflow</span><br />
+            <span class="tech-badge">PHP</span><span class="tech-badge">SQL</span>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title">
+              <span class="lang-ar">أنظمة إدارة داخلية لشركة ProDuct / ProSteel</span>
+              <span class="lang-en">Internal ProDuct / ProSteel Management Tools</span>
+            </div>
+            <div class="project-type">
+              <span class="lang-ar">وحدات شبيهة بالـ ERP · PHP, MySQL</span>
+              <span class="lang-en">ERP-like Modules · PHP, MySQL</span>
+            </div>
+            <p class="project-desc">
+              <span class="lang-ar">
+                إدارة المواد، الحضور والانصراف، الصندوق اليومي، وعروض الأسعار لمشاريع الدكت والأعمال الحديدية.
+              </span>
+              <span class="lang-en">
+                Manage materials, HR/attendance, cashbox, and quotations for HVAC ducting and steel projects.
+              </span>
+            </p>
+            <span class="project-tag">// ERP · HVAC / Steel</span><br />
+            <span class="tech-badge">PHP</span><span class="tech-badge">MySQL</span>
+          </div>
+        </div>
+
+        <!-- Desktop / IoT / AI / Cyber & Tools -->
+        <div>
+          <div class="group-title">
+            <span class="lang-ar">برامج سطح مكتب، إنترنت الأشياء، ذكاء اصطناعي وأمن</span>
+            <span class="lang-en">Desktop · IoT · AI &amp; Cyber-related Work</span>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title">
+              <span class="lang-ar">نظام وقوف سيارات ذكي (مشروع تخرج)</span>
+              <span class="lang-en">Smart Parking System (Graduation Project)</span>
+            </div>
+            <div class="project-type">
+              <span class="lang-ar">حل إنترنت أشياء · Arduino, ESP32, IR, Servo, LCD, Web UI</span>
+              <span class="lang-en">IoT Solution · Arduino, ESP32, IR Sensors, Servo, LCD, Web UI</span>
+            </div>
+            <p class="project-desc">
+              <span class="lang-ar">
+                نظام وقوف سيارات يعتمد على حساسات لاكتشاف السيارات، بوابة بسيرفو، شاشة LCD، ولوحة تحكم ويب لعرض الحالة.
+              </span>
+              <span class="lang-en">
+                Smart parking system using sensors to detect cars, servo gate control, display on LCD, and live web dashboard.
+              </span>
+            </p>
+            <span class="project-tag">// IoT · Embedded</span><br />
+            <span class="tech-badge">Arduino</span><span class="tech-badge">ESP32</span>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title">
+              <span class="lang-ar">نظام إدارة جمعية أقساط</span>
+              <span class="lang-en">Installment Association Management</span>
+            </div>
+            <div class="project-type">
+              <span class="lang-ar">برنامج قواعد بيانات مكتبي · C#, SQL</span>
+              <span class="lang-en">Desktop DB System · C#, SQL</span>
+            </div>
+            <p class="project-desc">
+              <span class="lang-ar">
+                إدارة المشتركين، العقود، الأقساط، والمبالغ المتبقية باستخدام C# وقواعد بيانات SQL.
+              </span>
+              <span class="lang-en">
+                Manages clients, contracts, installments, and remaining balances using C# and SQL.
+              </span>
+            </p>
+            <span class="project-tag">// Finance · C#</span><br />
+            <span class="tech-badge">C#</span><span class="tech-badge">SQL</span>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title">
+              <span class="lang-ar">نظام إدارة عيادات ومراكز طبية</span>
+              <span class="lang-en">Medical Centers &amp; Clinics Management</span>
+            </div>
+            <div class="project-type">
+              <span class="lang-ar">برنامج طبي مكتبي · C#, SQL</span>
+              <span class="lang-en">Desktop Health System · C#, SQL</span>
+            </div>
+            <p class="project-desc">
+              <span class="lang-ar">
+                إدارة ملفات المرضى والمواعيد وبعض العمليات المالية الأساسية للعيادات والمراكز الطبية.
+              </span>
+              <span class="lang-en">
+                Handles patient records, appointments, and basic financial operations for clinics and medical centers.
+              </span>
+            </p>
+            <span class="project-tag">// Health · C#</span><br />
+            <span class="tech-badge">C#</span><span class="tech-badge">SQL</span>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title">
+              <span class="lang-ar">تشفير الصور باستخدام خوارزمية كتلية</span>
+              <span class="lang-en">Image Encryption using Block Cipher</span>
+            </div>
+            <div class="project-type">
+              <span class="lang-ar">أمن وتشفير · C#</span>
+              <span class="lang-en">Security / Cryptography · C#</span>
+            </div>
+            <p class="project-desc">
+              <span class="lang-ar">
+                نظام يقوم بتشفير الصور باستخدام خوارزمية تشفير كتلية، يعكس فهمًا لمفاهيم التشفير والأمن السيبراني.
+              </span>
+              <span class="lang-en">
+                Encrypts images using a custom block cipher algorithm, reflecting cryptography and security concepts.
+              </span>
+            </p>
+            <span class="project-tag">// Cybersecurity · Crypto</span><br />
+            <span class="tech-badge">C#</span>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title">
+              <span class="lang-ar">تصنيف نصوص الصحة النفسية (بحث علمي)</span>
+              <span class="lang-en">Mental Health Text Classification (Research)</span>
+            </div>
+            <div class="project-type">
+              <span class="lang-ar">ذكاء اصطناعي / معالجة نصوص · Python, TF-IDF, SMOTE, MLP, BERT, LSTM+Attention</span>
+              <span class="lang-en">AI / NLP · Python, TF-IDF, SMOTE, MLP, BERT, LSTM+Attention</span>
+            </div>
+            <p class="project-desc">
+              <span class="lang-ar">
+                تصنيف متعدد الفئات لنصوص متعلقة بالصحة النفسية باستخدام نماذج تعلّم آلي كلاسيكية ونماذج عميقة.
+              </span>
+              <span class="lang-en">
+                Multi-class classification of mental health texts with classical ML and deep learning architectures.
+              </span>
+            </p>
+            <span class="project-tag">// AI · NLP</span><br />
+            <span class="tech-badge">Python</span><span class="tech-badge">PyTorch</span>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title">
+              <span class="lang-ar">نظام ذكاء اصطناعي لتحسين كفاءة الألواح الشمسية</span>
+              <span class="lang-en">AI System for Enhancing Solar Panel Efficiency</span>
+            </div>
+            <div class="project-type">
+              <span class="lang-ar">تحسين أداء · طاقة شمسية</span>
+              <span class="lang-en">AI Optimization · Energy</span>
+            </div>
+            <p class="project-desc">
+              <span class="lang-ar">
+                مقاربة تعتمد على تحليل البيانات لتحسين أداء الألواح الشمسية باستخدام تقنيات الذكاء الاصطناعي.
+              </span>
+              <span class="lang-en">
+                AI-based approach to analyze and improve solar panel performance using data-driven methods.
+              </span>
+            </p>
+            <span class="project-tag">// AI · Optimization</span>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title">
+              <span class="lang-ar">تصميم شبكة لاسلكية ذكية باستخدام WiFi 6</span>
+              <span class="lang-en">Smart Wireless Network Design Using WiFi 6</span>
+            </div>
+            <div class="project-type">
+              <span class="lang-ar">تصميم شبكات · WiFi 6</span>
+              <span class="lang-en">Network Design · WiFi 6</span>
+            </div>
+            <p class="project-desc">
+              <span class="lang-ar">
+                تصميم شبكة لاسلكية تعتمد على WiFi 6 مع دراسة التغطية والأداء واستيعاب عدد كبير من المستخدمين.
+              </span>
+              <span class="lang-en">
+                Design of a wireless network using WiFi 6, focusing on coverage, performance, and capacity.
+              </span>
+            </p>
+            <span class="project-tag">// Networking · WiFi 6</span>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title">
+              <span class="lang-ar">تحويل الصوت إلى لغة إشارة</span>
+              <span class="lang-en">Speech to Sign Language Conversion</span>
+            </div>
+            <div class="project-type">
+              <span class="lang-ar">نظام مساعد · Python</span>
+              <span class="lang-en">Assistive System · Python</span>
+            </div>
+            <p class="project-desc">
+              <span class="lang-ar">
+                نظام يقوم بتحويل الكلام إلى تمثيلات أساسية للغة الإشارة بهدف مساعدة ذوي الإعاقة السمعية.
+              </span>
+              <span class="lang-en">
+                Converts spoken language to basic sign language representations to support hearing-impaired users.
+              </span>
+            </p>
+            <span class="project-tag">// Assistive Tech · Python</span><br />
+            <span class="tech-badge">Python</span>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title">
+              <span class="lang-ar">MTD-Tracker – نظام تتبع دفاتر (PWA)</span>
+              <span class="lang-en">MTD-Tracker – Notebook Tracking PWA</span>
+            </div>
+            <div class="project-type">
+              <span class="lang-ar">تطبيق ويب تقدّمي · HTML, CSS, JS</span>
+              <span class="lang-en">Progressive Web App · HTML, CSS, JS</span>
+            </div>
+            <p class="project-desc">
+              <span class="lang-ar">
+                تطبيق ويب تقدّمي يعمل أوفلاين لتتبع الدفاتر والسجلات، يمكن تثبيته على الآيفون مع نتائج بحث ملوّنة.
+              </span>
+              <span class="lang-en">
+                Offline-capable PWA for tracking notebooks/records, installable on iPhone with colored search results.
+              </span>
+            </p>
+            <span class="project-tag">// PWA · Offline</span><br />
+            <span class="tech-badge">HTML</span><span class="tech-badge">JS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS / STACK + LANGUAGES + HOBBIES -->
+    <section id="stack" class="panel">
+      <div class="section-label">
+        <i class="bi bi-sliders2"></i>
+        <span class="lang-ar">المهارات التقنية، اللغات، والهوايات</span>
+        <span class="lang-en">Technical Skills, Languages &amp; Hobbies</span>
+      </div>
+      <div class="section-line"></div>
+
+      <div class="grid-2-even">
+        <!-- Skills / Tech Stack -->
+        <div>
+          <div class="group-title">
+            <span class="lang-ar">المهارات التقنية الأساسية</span>
+            <span class="lang-en">Core Technical Stack</span>
+          </div>
+          <div class="cv-card">
+            <div style="font-size:0.83rem; margin-bottom:4px; color:#e5e7eb;">
+              <span class="lang-ar">البرمجة والتطوير</span>
+              <span class="lang-en">Programming &amp; Development</span>
+            </div>
+            <div>
+              <span class="skills-chip">C</span>
+              <span class="skills-chip">C++</span>
+              <span class="skills-chip">C#</span>
+              <span class="skills-chip">Java</span>
+              <span class="skills-chip">PHP</span>
+              <span class="skills-chip">Python</span>
+              <span class="skills-chip">Visual Basic</span>
+            </div>
+
+            <div style="font-size:0.83rem; margin-top:8px; margin-bottom:4px; color:#e5e7eb;">
+              <span class="lang-ar">تطوير الويب والأُطر</span>
+              <span class="lang-en">Web &amp; Frameworks</span>
+            </div>
+            <div>
+              <span class="skills-chip">HTML5</span>
+              <span class="skills-chip">CSS3</span>
+              <span class="skills-chip">JavaScript</span>
+              <span class="skills-chip">Bootstrap</span>
+              <span class="skills-chip">Laravel</span>
+              <span class="skills-chip">ASP.NET</span>
+              <span class="skills-chip">ASP.NET MVC</span>
+              <span class="skills-chip">WebForms</span>
+              <span class="skills-chip">XML</span>
+            </div>
+
+            <div style="font-size:0.83rem; margin-top:8px; margin-bottom:4px; color:#e5e7eb;">
+              <span class="lang-ar">قواعد البيانات والبيانات / الذكاء الاصطناعي</span>
+              <span class="lang-en">Databases &amp; Data / AI</span>
+            </div>
+            <div>
+              <span class="skills-chip">MySQL</span>
+              <span class="skills-chip">SQL Server</span>
+              <span class="skills-chip">SQLite</span>
+              <span class="skills-chip">Database Design</span>
+              <span class="skills-chip">TF-IDF</span>
+              <span class="skills-chip">SMOTE</span>
+              <span class="skills-chip">ML Pipelines</span>
+            </div>
+
+            <div style="font-size:0.83rem; margin-top:8px; margin-bottom:4px; color:#e5e7eb;">
+              <span class="lang-ar">الأنظمة المضمنة، إنترنت الأشياء، والأدوات</span>
+              <span class="lang-en">Embedded, IoT &amp; Tools</span>
+            </div>
+            <div>
+              <span class="skills-chip">Arduino</span>
+              <span class="skills-chip">ESP32</span>
+              <span class="skills-chip">Firebase Realtime DB</span>
+              <span class="skills-chip">XAMPP</span>
+              <span class="skills-chip">VS Code</span>
+              <span class="skills-chip">Git</span>
+              <span class="skills-chip">GitHub</span>
+              <span class="skills-chip">Windows</span>
+            </div>
+          </div>
+
+          <div class="group-title" style="margin-top:10px;">
+            <span class="lang-ar">التركيز في الأمن السيبراني وتقنيات المعلومات</span>
+            <span class="lang-en">Cybersecurity &amp; IT Focus</span>
+          </div>
+          <div class="cv-card">
+            <ul class="cv-mini-list">
+              <li class="lang-ar">فهم لمفاهيم التشفير (خوارزميات كتلية، AES, RC5، تشفير الصور).</li>
+              <li class="lang-ar">مبادئ أساسية في أمن الشبكات وتصميم شبكات WiFi 6.</li>
+              <li class="lang-ar">خبرة عملية في الخوادم المحلية والنسخ الاحتياطي والدعم الفني.</li>
+              <li class="lang-ar">حل مشاكل الشبكات (LAN, Routers, Switches) ونقاط النهاية.</li>
+
+              <li class="lang-en">Understanding of cryptography concepts (block ciphers, AES/RC5, image encryption).</li>
+              <li class="lang-en">Basic network security and WiFi 6 design considerations.</li>
+              <li class="lang-en">Experience with on-premise servers, backups, and IT support.</li>
+              <li class="lang-en">Practical troubleshooting of LAN, routers, switches, and endpoints.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Languages (Human) + Hobbies -->
+        <div>
+          <div class="group-title">
+            <span class="lang-ar">اللغات</span>
+            <span class="lang-en">Languages (Spoken)</span>
+          </div>
+          <div class="lang-card">
+            <div class="lang-row">
+              <div class="lang-header">
+                <span class="lang-name">
+                  <span class="lang-ar">العربية (اللغة الأم)</span>
+                  <span class="lang-en">Arabic (Native)</span>
+                </span>
+                <span class="lang-stars">★★★★★</span>
+              </div>
+              <div class="lang-bar">
+                <div class="lang-bar-fill" style="--level: 100%;"></div>
+              </div>
+              <div style="font-size:0.75rem; color:var(--text-muted); margin-top:3px;">
+                <span class="lang-ar">إتقان تام في التحدّث والقراءة والكتابة.</span>
+                <span class="lang-en">Native language – excellent in speaking, reading, and writing.</span>
+              </div>
+            </div>
+
+            <div class="lang-row">
+              <div class="lang-header">
+                <span class="lang-name">
+                  <span class="lang-ar">الإنجليزية</span>
+                  <span class="lang-en">English</span>
+                </span>
+                <span class="lang-stars">★★★★☆</span>
+              </div>
+              <div class="lang-bar">
+                <div class="lang-bar-fill" style="--level: 85%;"></div>
+              </div>
+              <div style="font-size:0.75rem; color:var(--text-muted); margin-top:3px;">
+                <span class="lang-ar">قراءة: جيد جدًا · كتابة: جيد · محادثة: جيد.</span>
+                <span class="lang-en">Reading: Very Good · Writing: Good · Speaking: Good.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="group-title" style="margin-top:10px;">
+            <span class="lang-ar">الهوايات والاهتمامات</span>
+            <span class="lang-en">Hobbies &amp; Interests</span>
+          </div>
+          <div class="cv-card">
+            <ul class="hobby-list">
+              <li>
+                <i class="bi bi-book"></i>
+                <span class="lang-ar">قراءة كل ما يخص هندسة البرمجيات، الأمن السيبراني، والتقنيات الحديثة.</span>
+                <span class="lang-en">Reading about software engineering, cybersecurity, and new technologies.</span>
+              </li>
+              <li>
+                <i class="bi bi-lightbulb"></i>
+                <span class="lang-ar">تصميم أنظمة جديدة والتفكير في تحسين الواقع العملي (جامعة، متجر، مصنع... إلخ).</span>
+                <span class="lang-en">Designing systems and thinking about how to improve real processes (universities, stores, factories).</span>
+              </li>
+              <li>
+                <i class="bi bi-people"></i>
+                <span class="lang-ar">مساعدة الآخرين في البرمجة والمشاريع وحل المشاكل التقنية.</span>
+                <span class="lang-en">Helping others with programming, projects, and technical problems.</span>
+              </li>
+              <li>
+                <i class="bi bi-controller"></i>
+                <span class="lang-ar">الاستمتاع بحل المشكلات والألغاز والتحديات التقنية.</span>
+                <span class="lang-en">Enjoying problem-solving, logic puzzles, and technical challenges.</span>
+              </li>
+              <li>
+                <i class="bi bi-tree"></i>
+                <span class="lang-ar">المشي وقضاء وقت هادئ للتفكير والتخطيط للأهداف المستقبلية.</span>
+                <span class="lang-en">Walking and spending quiet time to think and plan future goals.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="panel">
+      <div class="section-label">
+        <i class="bi bi-envelope-open"></i>
+        <span class="lang-ar">التواصل وطلب تنفيذ مشروع</span>
+        <span class="lang-en">Contact / Hire Me</span>
+      </div>
+      <div class="section-line"></div>
+
+      <div class="grid-2-even">
+        <div>
+          <h3 style="font-size:1rem; margin-bottom:6px;">
+            <span class="lang-ar">لنحوّل فكرتك إلى نظام حقيقي.</span>
+            <span class="lang-en">Let’s work together.</span>
+          </h3>
+          <p style="font-size:0.86rem; color:var(--text-muted); margin-bottom:14px;">
+            <span class="lang-ar">
+              إذا كان لديك فكرة نظام (جامعي، طبي، تجاري، تكييف، إنترنت أشياء، أو أي أداة داخلية)،
+              يمكنك التواصل معي مباشرة أو إرسال وصف مختصر عبر النموذج.
+            </span>
+            <span class="lang-en">
+              If you are looking for a custom system (university, store, HVAC, IoT,
+              AI, or an internal tool), you can contact me directly or send a short
+              description using the form.
+            </span>
+          </p>
+
+          <div class="contact-info-row">
+            <i class="bi bi-telephone"></i>
+            <span class="lang-ar">هاتف / واتساب: <strong>+964 0781 431 9610</strong></span>
+            <span class="lang-en">Phone / WhatsApp: <strong>+964 0781 431 9610</strong></span>
+          </div>
+          <div class="contact-info-row">
+            <i class="bi bi-envelope"></i>
+            <span>
+              <span class="lang-ar">البريد الإلكتروني: </span>
+              <span class="lang-en">Email: </span>
+              <a href="mailto:iraq623624@gmail.com">iraq623624@gmail.com</a>
+            </span>
+          </div>
+        </div>
+
+        <div>
+          <form
+            action="mailto:iraq623624@gmail.com"
+            method="post"
+            enctype="text/plain"
+          >
+            <div style="margin-bottom:8px;">
+              <label style="font-size:0.8rem; display:block; margin-bottom:3px;">
+                <span class="lang-ar">الاسم</span>
+                <span class="lang-en">Name</span>
+              </label>
+              <input
+                type="text"
+                name="name"
+                class="contact-input"
+                placeholder="Your name / اسمك"
+                required
+              />
+            </div>
+            <div style="margin-bottom:8px;">
+              <label style="font-size:0.8rem; display:block; margin-bottom:3px;">
+                <span class="lang-ar">البريد الإلكتروني</span>
+                <span class="lang-en">Email</span>
+              </label>
+              <input
+                type="email"
+                name="email"
+                class="contact-input"
+                placeholder="Your email / بريدك الإلكتروني"
+                required
+              />
+            </div>
+            <div style="margin-bottom:8px;">
+              <label style="font-size:0.8rem; display:block; margin-bottom:3px;">
+                <span class="lang-ar">تفاصيل المشروع أو الرسالة</span>
+                <span class="lang-en">Project Details / Message</span>
+              </label>
+              <textarea
+                name="message"
+                class="contact-textarea"
+                placeholder="اكتب باختصار نوع النظام أو الفكرة التي تريد تنفيذها..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn-main" style="margin-top:4px;">
+              <i class="bi bi-send"></i>
+              <span class="lang-ar">إرسال</span>
+              <span class="lang-en">Send</span>
+            </button>
+            <div style="font-size:0.75rem; color:var(--text-muted); margin-top:4px;">
+              <span class="lang-ar">
+                * هذا النموذج يستخدم برنامج البريد في جهازك (mailto). يمكن لاحقًا ربطه بواجهة برمجية (API) كاملة.
+              </span>
+              <span class="lang-en">
+                * This form uses your email client (mailto). A full backend contact API can be added later.
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-text">
+        <span class="lang-ar">© <span id="year"></span> محمد ياسر حسين – السيرة الذاتية والمحفظة البرمجية.</span>
+        <span class="lang-en">© <span id="year-en"></span> Mohammed Yasser Hussain – CV &amp; Portfolio.</span>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const year = new Date().getFullYear();
+    document.getElementById("year").textContent = year;
+    document.getElementById("year-en").textContent = year;
+
+    const body = document.body;
+    const btnAr = document.getElementById("btn-ar");
+    const btnEn = document.getElementById("btn-en");
+
+    function setLang(lang) {
+      if (lang === "ar") {
+        body.classList.remove("english");
+        document.documentElement.lang = "ar";
+        btnAr.classList.add("active");
+        btnEn.classList.remove("active");
+      } else {
+        body.classList.add("english");
+        document.documentElement.lang = "en";
+        btnEn.classList.add("active");
+        btnAr.classList.remove("active");
+      }
+    }
+
+    btnAr.addEventListener("click", () => setLang("ar"));
+    btnEn.addEventListener("click", () => setLang("en"));
+
+    // البداية بالعربية
+    setLang("ar");
+  </script>
+</body>
+</html>
